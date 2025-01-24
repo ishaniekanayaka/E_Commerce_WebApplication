@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: HP
-  Date: 1/24/2025
-  Time: 1:02 PM
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,8 +9,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style>
-
-
         /* White Overlay */
         .overlay {
             position: fixed;
@@ -25,7 +16,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+            background: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(5px);
             z-index: -1;
         }
@@ -64,10 +55,9 @@
             width: calc(100% - 260px);
             position: relative;
             z-index: 2;
-
         }
 
-        h4{
+        h4 {
             font-weight: bold;
             font-family: "Lucida Handwriting";
             text-align: center;
@@ -92,15 +82,14 @@
 </head>
 <body>
 
-
 <!-- Sidebar Navigation -->
 <div class="sidebar">
-
-    <h5 class="white-text center-align" style=" font-family:Lucida Handwriting">Cliara</h5>
-    <a href="#"><i class="material-icons">category</i> Category</a>
-    <a href="#"><i class="material-icons">shopping_cart</i> Products</a>
-    <a href="#"><i class="material-icons">person</i> User</a>
-    <a href="#"><i class="material-icons">receipt</i> Manage Orders</a>
+    <a href="index.jsp"><h5 class="white-text center-align" style=" font-family:Lucida Handwriting">Cliara</h5></a>
+   <%-- <h5 class="white-text center-align" style=" font-family:Lucida Handwriting">Cliara</h5>--%>
+    <a href="category-dashboard.jsp"><i class="material-icons">category</i> Category</a>
+    <a href="products.jsp"><i class="material-icons">shopping_cart</i> Products</a>
+    <a href="admin-register.jsp"><i class="material-icons">person</i> User</a>
+    <a href="orders.jsp"><i class="material-icons">receipt</i> Manage Orders</a>
 </div>
 
 <!-- Main Content -->
@@ -110,25 +99,25 @@
         <div class="col s6 m3">
             <div class="card blue lighten-1 white-text">
                 <i class="material-icons large">category</i>
-                <h6>Manage Categories</h6>
+                <h6><a href="category.jsp" style="color:white">Manage Categories</a></h6>
             </div>
         </div>
         <div class="col s6 m3">
             <div class="card red lighten-1 white-text">
                 <i class="material-icons large">shopping_cart</i>
-                <h6>Manage Products</h6>
+                <h6><a href="products.jsp" style="color:white">Manage Products</a></h6>
             </div>
         </div>
         <div class="col s6 m3">
             <div class="card green lighten-1 white-text">
                 <i class="material-icons large">person</i>
-                <h6>Manage Users</h6>
+                <h6><a href="admin-register.jsp" style="color:white">Manage Users</a></h6>
             </div>
         </div>
         <div class="col s6 m3">
             <div class="card orange lighten-1 white-text">
                 <i class="material-icons large">receipt</i>
-                <h6>Manage Orders</h6>
+                <h6><a href="orders.jsp" style="color:white">Manage Orders</a></h6>
             </div>
         </div>
     </div>
@@ -136,16 +125,6 @@
 
 <!-- Materialize JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
-<!-- Fix for Video Autoplay -->
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        let video = document.getElementById("bgVideo");
-        video.play().catch(error => {
-            console.error("Autoplay failed:", error);
-        });
-    });
-</script>
 
 </body>
 </html>

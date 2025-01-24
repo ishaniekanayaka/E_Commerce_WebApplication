@@ -1,16 +1,9 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: HP
-  Date: 1/24/2025
-  Time: 1:46 AM
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Account</title>
+    <title>Create Admin Account</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
         * {
@@ -118,32 +111,35 @@
 <body>
 
 <div class="form-container">
-    <h2>Create Account</h2>
-    <form id="registerForm">
+    <h2>Create Admin Account</h2>
+    <form id="registerForm" action="admin-register-servlet" method="post">
+        <!-- Ensure role is always admin -->
+        <input type="hidden" name="role" value="admin">
+
         <div class="input-box">
             <i class="fas fa-user"></i>
-            <input type="text" placeholder="First and last name" required>
+            <input type="text" name="user_name" placeholder="First and last name" required>
         </div>
         <div class="input-box">
             <i class="fas fa-envelope"></i>
-            <input type="email" placeholder="Enter your email" required>
+            <input type="email" name="email" placeholder="Enter your email" required>
         </div>
         <div class="input-box">
             <i class="fas fa-phone"></i>
-            <input type="text" placeholder="Enter your mobile number" required>
+            <input type="text" name="phone" placeholder="Enter your mobile number" required>
         </div>
         <div class="input-box">
             <i class="fas fa-map-marker-alt"></i>
-            <input type="text" placeholder="Enter your address" required>
+            <input type="text" name="address" placeholder="Enter your address" required>
         </div>
         <div class="input-box">
             <i class="fas fa-lock"></i>
-            <input type="password" id="password" placeholder="At least 6 characters" required>
+            <input type="password" id="password" name="password" placeholder="At least 6 characters" required>
         </div>
         <p class="password-info">Passwords must be at least 6 characters.</p>
         <div class="input-box">
             <i class="fas fa-lock"></i>
-            <input type="password" id="confirmPassword" placeholder="Re-enter your password" required>
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Re-enter your password" required>
         </div>
         <button type="submit" class="register-btn">Register</button>
     </form>
