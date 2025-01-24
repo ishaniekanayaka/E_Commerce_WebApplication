@@ -98,7 +98,7 @@
         <div class="text-center small-text mt-3">Or log in with</div>
         <div class="d-flex justify-content-center gap-3 mt-3">
             <button type="button" class="btn btn-light border btn-sm" style="background-color: #813271; color: white;">
-                Admin
+               <a href="admin-dashboard.jsp">Admin</a>
             </button>
         </div>
     </form>
