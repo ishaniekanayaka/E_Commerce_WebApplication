@@ -87,7 +87,7 @@
     <a href="index.jsp"><h5 class="white-text center-align" style=" font-family:Lucida Handwriting">Cliara</h5></a>
    <%-- <h5 class="white-text center-align" style=" font-family:Lucida Handwriting">Cliara</h5>--%>
     <a href="category-dashboard.jsp"><i class="material-icons">category</i> Category</a>
-    <a href="products.jsp"><i class="material-icons">shopping_cart</i> Products</a>
+    <a href="product-dashboard.jsp"><i class="material-icons">shopping_cart</i> Products</a>
     <a href="user-dashboard.jsp"><i class="material-icons">person</i> User</a>
     <a href="orders.jsp"><i class="material-icons">receipt</i> Manage Orders</a>
 </div>
