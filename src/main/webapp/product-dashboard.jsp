@@ -107,10 +107,10 @@
 
 
             <div class="d-flex justify-content-center mb-4">
-                <form action="category-list" class="me-3">
+                <form action="product-list" class="me-3">
                     <button type="submit" class="btn btn-danger">View Products</button>
                 </form>
-                <form action="category.jsp">
+                <form action="product.jsp">
                     <button type="submit" class="btn btn-danger">Add Products</button>
                 </form>
             </div>
