@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Admin Account</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
     <style>
         * {
             margin: 0;
@@ -112,10 +113,9 @@
 
 <div class="form-container">
     <h2>Create Admin Account</h2>
-    <form id="registerForm" action="admin-register-servlet" method="post">
-        <!-- Ensure role is always admin -->
-        <input type="hidden" name="role" value="admin">
 
+    <form id="registerForm" action="admin-register-servlet" method="post">
+        <input type="hidden" name="role" value="admin">
         <div class="input-box">
             <i class="fas fa-user"></i>
             <input type="text" name="user_name" placeholder="First and last name" required>
@@ -146,14 +146,29 @@
     <p class="bottom-text">Already have an account? <a href="admin-login.jsp">Sign in</a></p>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
     document.getElementById('registerForm').addEventListener('submit', function (event) {
         var password = document.getElementById('password').value;
         var confirmPassword = document.getElementById('confirmPassword').value;
 
         if (password !== confirmPassword) {
-            alert("Passwords do not match!");
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Passwords do not match!'
+            });
             event.preventDefault();
+        } else {
+            event.preventDefault();
+            Swal.fire({
+                icon: 'success',
+                title: 'Success!',
+                text: 'Admin account created successfully!',
+                confirmButtonText: 'OK'
+            }).then(() => {
+                document.getElementById('registerForm').submit();
+            });
         }
     });
 </script>
