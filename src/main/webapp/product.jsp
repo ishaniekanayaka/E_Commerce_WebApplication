@@ -1,4 +1,4 @@
-<%--
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: HP
   Date: 1/25/2025
@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -180,7 +181,21 @@
             <label for="categorySelect" class="form-label">Select Category ID</label>
             <select class="form-select" id="categorySelect" name="category_id" required>
                 <option value="">Select Category</option>
+                <%
+                    List<Integer> categoryIds = (List<Integer>) request.getAttribute("categoryIds");
+                    if (categoryIds != null && !categoryIds.isEmpty()){
+                        for (Integer categoryId : categoryIds){
 
+                %>
+                <option value="<%=categoryId%>"><%=categoryId%></option>
+                <%
+                    }
+                    }else {
+                %>
+                <option value="" disabled>No Categories Available</option>
+                <%
+                    }
+                %>
             </select>
         </div>
         <div class="mb-3">
@@ -196,4 +211,3 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
