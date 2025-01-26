@@ -22,7 +22,7 @@ This is a full-featured **cosmetics e-commerce web application** built using **J
 ## 🏗 **Installation & Setup**  
 1. **Clone the repository:**  
    ```bash
-   git clone https://github.com/your-username/your-repo.git
+   [git clone https://github.com/ishaniekanayaka/E_Commerce_WebApplication](https://github.com/ishaniekanayaka/E_Commerce_WebApplication)
    ```  
 2. **Import the project** into IntelliJ IDEA or Eclipse.  
 3. **Configure the database:**  
@@ -31,7 +31,7 @@ This is a full-featured **cosmetics e-commerce web application** built using **J
 5. **Run the application** using a Tomcat server.  
 
 ## 🛒 **Live Demo**  
-[YouTube Link Click Here]  
+[[YouTube Link Click Here]](https://youtu.be/FUHsiNYjnjE)  
 
 ## 🤝 **Contributing**  
 Feel free to submit issues or pull requests to improve the project!  
