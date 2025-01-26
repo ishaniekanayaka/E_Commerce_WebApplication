@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Admin Account</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
     <style>
         * {
@@ -107,9 +108,36 @@
         .bottom-text a:hover {
             text-decoration: underline;
         }
+
+        .btn-home {
+            position: absolute;
+            top: 40px;
+            left: 30px;
+            background-color: #a8a2a6;
+            border: none;
+            padding: 12px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        .btn-home i {
+            color: white;
+            font-size: 28px; /* Adjust icon size */
+        }
+        .btn-home:hover {
+            background-color: #6b5569;
+            transform: scale(1.1);
+        }
+
     </style>
 </head>
 <body>
+
+<form action="admin-dashboard.jsp" class="text-start mb-4">
+    <button type="submit" class="btn btn-home">
+        <i class="fas fa-home"></i>
+    </button>
+</form>
 
 <div class="form-container">
     <h2>Create Admin Account</h2>
