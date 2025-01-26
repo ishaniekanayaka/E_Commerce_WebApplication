@@ -16,8 +16,7 @@ This is a full-featured **cosmetics e-commerce web application** built using **J
 - **Database:** MySQL  
 - **Version Control:** Git  
 
-## 📸 **Screenshots**  
-(Add relevant images or GIFs showcasing the UI)  
+\
 
 ## 🏗 **Installation & Setup**  
 1. **Clone the repository:**  
