@@ -305,7 +305,7 @@
                     </button>
                     <button class="search-btn">
                         <a href="add-cart.jsp"><img src="image/cart.png" alt="Cart"></a>
-                    </button>
+                    </button>K
                     <button class="logout-btn">
                         <a href="logout.jsp">
                             <img src="image/logut.png" alt="Logout" style="width: 22px; height: 20px;">
