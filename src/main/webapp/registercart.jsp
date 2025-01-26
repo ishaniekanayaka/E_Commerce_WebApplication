@@ -107,7 +107,6 @@
         .bottom-text a:hover {
             text-decoration: underline;
         }
-
         .btn-home {
             position: absolute;
             top: 40px;
@@ -130,6 +129,7 @@
     </style>
 </head>
 <body>
+
 <form action="index.jsp" class="text-start mb-4">
     <button type="submit" class="btn btn-home">
         <i class="fas fa-home"></i>
@@ -163,7 +163,7 @@
         </div>
         <button type="submit" class="register-btn">Register</button>
     </form>
-    <p class="bottom-text">Already have an account? <a href="admin-login.jsp">Sign in</a></p>
+    <p class="bottom-text">Already have an account? <a href="customerLogin.jsp">Sign in</a></p>
 </div>
 
 <script>

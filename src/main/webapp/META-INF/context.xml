@@ -2,13 +2,18 @@
 <Context path="/">
     <Resource
             name="jdbc/pool"
+            auth="Container"
             type="javax.sql.DataSource"
             driverClassName="com.mysql.cj.jdbc.Driver"
             url="jdbc:mysql://localhost:3306/e_commerce"
             username="root"
             password="Ijse@123"
-            maxTotal="5"
-            initialSize="5"
+            maxTotal="20"
+            maxIdle="10"
+            minIdle="5"
+            maxWaitMillis="-1"
     >
     </Resource>
 </Context>
+
+

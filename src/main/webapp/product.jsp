@@ -1,3 +1,4 @@
+
 <%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: HP
@@ -190,7 +191,7 @@
                 <option value="<%=categoryId%>"><%=categoryId%></option>
                 <%
                     }
-                    }else {
+                }else {
                 %>
                 <option value="" disabled>No Categories Available</option>
                 <%

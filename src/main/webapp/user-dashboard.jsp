@@ -14,6 +14,7 @@
     <title>User Management</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
         body {
             background-color: #fbe0ec;
@@ -85,10 +86,33 @@
             color: #6c757d;
             font-size: 0.9rem;
         }
+        .btn-home {
+            position: absolute;
+            top: 40px;
+            left: 30px;
+            background-color: #a8a2a6;
+            border: none;
+            padding: 12px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        .btn-home i {
+            color: white;
+            font-size: 28px; /* Adjust icon size */
+        }
+        .btn-home:hover {
+            background-color: #6b5569;
+            transform: scale(1.1);
+        }
     </style>
 </head>
 <body>
-
+<form action="admin-dashboard.jsp" class="text-start mb-4">
+    <button type="submit" class="btn btn-home">
+        <i class="fas fa-home"></i>
+    </button>
+</form>
 <div class="container">
     <h1>User Management</h1>
 

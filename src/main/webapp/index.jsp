@@ -1,3 +1,5 @@
+<%@ page import="lk.ijse.e_commerc_mynew.dto.ProductDTO" %>
+<%@ page import="java.util.List" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -6,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LAR'S - Skin Glow</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -229,15 +233,52 @@
                 text-align: center;
             }
 
-            .image-grid {
-                grid-template-columns: 1fr;
+
+            .image-container img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
             }
 
-            .image-box.large {
-                width: 100%;
+            .cart-overlay {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: rgba(255, 0, 0, 0.8);
+                padding: 10px;
+                border-radius: 50%;
+                display: none;
+            }
+
+            .cart-overlay i {
+                color: white;
+                font-size: 20px;
+            }
+
+            .image-container:hover .cart-overlay {
+                display: block;
+            }
+
+            /* Styling for the social media icons */
+            .social-icons {
+                display: flex;
+                justify-content: center;
+                gap: 15px;
+                padding: 20px;
+            }
+
+            .social-icons a {
+                text-decoration: none;
+                color: #555;
+                font-size: 2rem;
+                transition: color 0.3s;
+            }
+
+            .social-icons a:hover {
+                color: #813271; /* Hover color for the icons */
             }
         }
-
     </style>
 </head>
 <body>
@@ -251,23 +292,28 @@
             <nav class="navbar">
                 <a href="#"><h2 class="logo">Cliara.</h2></a>
                 <ul>
-                    <li><a href="#">Products</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Contact Us</a></li>
+                    <li><a  href="new-product-list">Products</a></li>
+                    <li><a href="blog.jsp">Blog</a></li>
+                    <li><a href="contact.jsp">Contact Us</a></li>
                 </ul>
                 <div class="nav-icons">
                     <button class="customer-btn">
                         <a href="admin-login.jsp"><img src="image/admin.png" alt="Add Customer"></a>
                     </button>
                     <button class="search-btn">
-                        <a href="#"><img src="image/search.png" alt="Search"></a>
+                        <a href="#"><img src="image/search.png" alt="Seaarch"></a>
                     </button>
                     <button class="search-btn">
-                        <a href="#"><img src="image/cart.png" alt="Cart"></a>
+                        <a href="add-cart.jsp"><img src="image/cart.png" alt="Cart"></a>
                     </button>
-                </div>
-                <div class="search-bar">
-                    <input type="text" placeholder="Search products...">
+                    <button class="logout-btn">
+                        <a href="logout.jsp">
+                            <img src="image/logut.png" alt="Logout" style="width: 22px; height: 20px;">
+                        </a>
+                    </button>
+                    <%--<button class="logout-btn">
+                        <a href="logout.jsp"><i class="fa fa-sign-out fa-lg" style="color: white;"></i></a>
+                    </button>--%>
                 </div>
             </nav>
             <div class="content">
@@ -276,68 +322,72 @@
             </div>
         </div>
         <!-- Floating Shop Now Button -->
-        <button class="floating-shop-btn">SHOP NOW</button>
+        <a href="new-product-list" class="floating-shop-btn">Shop Now</a>
+        <%--<button class="floating-shop-btn">SHOP NOW</button>--%>
     </div>
 </section>
 
-<section>
-    <div class="container">
-        <h1 class="text-center mb-4">Our Products</h1>
+ <%--&lt;%&ndash;Categories Section &ndash;%&gt;
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Our Products</h1>
 
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
-            <!-- Product 1 -->
-            <div class="col">
-                <div class="card h-100">
-                    <img src="image/img_4.png" class="card-img-top" alt="Product 1" style="height: 200px; object-fit: cover;">
-                    <div class="card-body">
-                        <h5 class="card-title">Product 1</h5>
-                        <p class="card-text text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        <p class="fw-bold">Price: $19.99</p>
-                        <form action="cart.jsp">
-                            <button type="submit" class="btn btn-danger">ADD TO CART</button>
-                        </form>
-                        <!-- <button type="button" class="btn btn-primary">View Details</button> -->
-                                            </div>
-                    <!-- <a href="product-details.jsp?productId=1" class="stretched-link"></a> -->
-                                    </div>
-            </div>
-            <div class="col">
-                <div class="card h-100">
-                    <img src="image/img.png" class="card-img-top" alt="Product 1" style="height: 200px; object-fit: cover;">
-                    <div class="card-body">
-                        <h5 class="card-title">Product 1</h5>
-                        <p class="card-text text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        <p class="fw-bold">Price: $19.99</p>
-                        <form action="cart.jsp">
-                            <button type="submit" class="btn btn-danger">ADD TO CART</button>
-                        </form>
-                        <!-- <button type="button" class="btn btn-primary">View Details</button> -->
-                                            </div>
-                    <!-- <a href="product-details.jsp?productId=1" class="stretched-link"></a> -->
-                                    </div>
-            </div>
-            <div class="col">
-                <div class="card h-100">
-                    <img src="image/img.png" class="card-img-top" alt="Product 1" style="height: 200px; object-fit: cover;">
-                    <div class="card-body">
-                        <h5 class="card-title">Product 1</h5>
-                        <p class="card-text text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        <p class="fw-bold">Price: $19.99</p>
-                        <form action="cart.jsp">
-                            <button type="submit" class="btn btn-danger">ADD TO CART</button>
-                        </form>
-                        <!-- <button type="button" class="btn btn-primary">View Details</button> -->
-                                            </div>
-                    <!-- <a href="product-details.jsp?productId=1" class="stretched-link"></a> -->
-                                    </div>
+    <%
+        // Fetch the product list passed from the servlet
+        List<ProductDTO> productList = (List<ProductDTO>) request.getAttribute("productList");
+        if (productList != null && !productList.isEmpty()) {
+    %>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+        <%
+            for (ProductDTO product : productList) {
+                String imagePath = product.getImage_path(); // Fetch the image path from the product
+                // Adjust the path if necessary, e.g., prefix it with a folder name if needed.
+                if (imagePath != null && !imagePath.isEmpty()) {
+                    imagePath = "http://localhost:8080/E_Commerc_MyNew_war/" + imagePath;  // Add the base path if necessary
+                }
+        %>
+        <div class="col">
+            <div class="card h-100">
+                <!-- Product Image -->
+                <img src="<%= imagePath %>" class="card-img-top" alt="<%= product.getProductName() %>" style="height: 200px; object-fit: cover;">
+
+                <div class="card-body">
+                    <!-- Product Name -->
+                    <h5 class="card-title"><%= product.getProductName() %></h5>
+
+                    <!-- Product Description -->
+                    <p class="card-text text-muted"><%= product.getProductDescription() %></p>
+
+                    <!-- Product Price -->
+                    <p class="fw-bold">Price: $<%= product.getProductPrice() %></p>
+
+                    <!-- Product Quantity -->
+                    <p>Available: <%= product.getProductQuantity() %> units</p>
+
+                    <!-- Action Button -->
+                    <form action="cart">
+
+                        <input type="hidden" name="product_name" value="<%= product.getProductName() %>">
+                        <input type="hidden" name="product_price" value="<%= product.getProductPrice() %>">
+                        <input type="hidden" name="product_quantity" value="1">
+                        <input type="hidden" name="product_image" value="<%= product.getImage_path() %>">
+                        <button type="submit" class="btn btn-danger">Add to Cart</button>
+                    </form>
+                </div>
             </div>
         </div>
+        <%
+            }
+        %>
     </div>
-</section>
+    <% } else { %>
+    <div class="alert alert-warning text-center" role="alert">
+        No products available at the moment.
+    </div>
+    <% } %>
+</div>
+--%>
 
-<%--<!-- Categories Section -->--%>
-
-<%--<div class="container mt-5">
+<div class="container mt-5">
     <h1 class="text-center mb-4">Our Products</h1>
 
     <%
@@ -368,9 +418,15 @@
                     <p>Available: <%= product.getProductQuantity() %> units</p>
 
                     <!-- Action Button -->
-                    <form action="cart.jsp">
-                        <button type="submit" class="btn btn-danger">ADD TO CART</button>
+                    <form action="cart" method="post">
+                        <input type="hidden" name="product_id" value="<%= product.getProduct_id() %>">
+                        <input type="hidden" name="product_name" value="<%= product.getProductName() %>">
+                        <input type="hidden" name="product_price" value="<%= product.getProductPrice() %>">
+                        <input type="hidden" name="product_quantity" value="1">
+                        <input type="hidden" name="product_image" value="<%= product.getImage_path() %>">
+                        <button type="submit" class="btn btn-danger">Add to Cart</button>
                     </form>
+
                 </div>
             </div>
         </div>
@@ -383,17 +439,32 @@
         No products available at the moment.
     </div>
     <% } %>
-</div>--%>
+</div>
 
 <!-- Footer -->
 <footer class="footer text-center">
     <div class="container">
         <p>Follow us on</p>
-        <div>
-            <a href="#"><i class="fa fa-facebook fa-lg"></i></a>
-            <a href="#"><i class="fa fa-twitter fa-lg"></i></a>
-            <a href="#"><i class="fa fa-instagram fa-lg"></i></a>
-            <a href="#"><i class="fa fa-linkedin fa-lg"></i></a>
+        <div class="social-icons">
+            <!-- Facebook Link -->
+            <a href="https://www.facebook.com" target="_blank">
+                <i class="fab fa-facebook fa-lg"></i>
+            </a>
+
+            <!-- Twitter Link -->
+            <a href="https://www.twitter.com" target="_blank">
+                <i class="fab fa-twitter fa-lg"></i>
+            </a>
+
+            <!-- Instagram Link -->
+            <a href="https://www.instagram.com" target="_blank">
+                <i class="fab fa-instagram fa-lg"></i>
+            </a>
+
+            <!-- LinkedIn Link -->
+            <a href="https://www.linkedin.com" target="_blank">
+                <i class="fab fa-linkedin fa-lg"></i>
+            </a>
         </div>
         <p class="mt-3">© 2025 E-Shop. All Rights Reserved.</p>
     </div>
@@ -419,17 +490,16 @@
         let button = document.querySelector(".floating-shop-btn");
         if (window.scrollY > 100) {
             button.style.opacity = "1";
-            button.style.transform = "translateY(0)";
+            button.style.transform = "translateY(-20px)";
         } else {
             button.style.opacity = "0";
             button.style.transform = "translateY(20px)";
         }
     });
-
-    // Smooth Scroll to Top when clicked
-    document.querySelector(".floating-shop-btn").addEventListener("click", function () {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-    });
 </script>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
